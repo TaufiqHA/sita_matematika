@@ -57,6 +57,9 @@ class AdminPanelProvider extends PanelProvider
             ])
             ->renderHook('panels::head.start',
             fn(): string => Vite::useHotFile('hot')
-                ->withEntryPoints(['resources/css/app.css', 'resources/js/app.js'])->toHtml());;
+                ->withEntryPoints(['resources/css/app.css', 'resources/js/app.js'])->toHtml())
+            ->plugins([
+                \BezhanSalleh\FilamentShield\FilamentShieldPlugin::make()
+            ]);
     }
 }
