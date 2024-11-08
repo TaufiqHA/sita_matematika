@@ -8,6 +8,7 @@ use Filament\Widgets;
 use Filament\PanelProvider;
 use Filament\Support\Colors\Color;
 use Illuminate\Support\Facades\Vite;
+use App\Filament\Pages\Auth\EditProfile;
 use Filament\Http\Middleware\Authenticate;
 use Illuminate\Session\Middleware\StartSession;
 use Illuminate\Cookie\Middleware\EncryptCookies;

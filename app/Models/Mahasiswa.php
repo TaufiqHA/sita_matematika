@@ -3,8 +3,6 @@
 namespace App\Models;
 
 use Filament\Panel;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class Mahasiswa extends Authenticatable
@@ -13,9 +11,27 @@ class Mahasiswa extends Authenticatable
 
     protected $fillable = [
         'name',
+        'nim',
+        'sks',
         'email',
         'password',
     ];
+
+    protected $hidden = [
+        'password',
+    ];
+
+    /**
+     * Get the attributes that should be cast.
+     *
+     * @return array<string, string>
+     */
+    protected function casts(): array
+    {
+        return [
+            'password' => 'hashed',
+        ];
+    }
 
     public function canAccessPanel(Panel $panel): bool
     {
