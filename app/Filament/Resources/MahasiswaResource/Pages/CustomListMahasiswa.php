@@ -22,9 +22,7 @@ class CustomListMahasiswa extends listRecords
     {
         return $table
             ->columns([
-                TextColumn::make('user_id')
-                    ->numeric()
-                    ->sortable(),
+                TextColumn::make('user.name'),
                 TextColumn::make('nim')
                     ->searchable(),
                 TextColumn::make('sks')
