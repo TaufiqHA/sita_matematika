@@ -17,7 +17,11 @@ class MahasiswaResource extends Resource
 {
     protected static ?string $model = Mahasiswa::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'heroicon-o-users';
+
+    protected static ?string $navigationGroup = 'User Management';
+
+    protected static ?int $navigationSort = 1;
 
     public static function form(Form $form): Form
     {
@@ -76,7 +80,7 @@ class MahasiswaResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListMahasiswas::route('/'),
+            'index' => Pages\CustomListMahasiswa::route('/'),
             'create' => Pages\CreateMahasiswa::route('/create'),
             'edit' => Pages\EditMahasiswa::route('/{record}/edit'),
         ];
