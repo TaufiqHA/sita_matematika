@@ -25,6 +25,8 @@ class CustomListMahasiswa extends listRecords
                 TextColumn::make('user.name'),
                 TextColumn::make('nim')
                     ->searchable(),
+                TextColumn::make('user.email')
+                    ->label('Email'),
                 TextColumn::make('sks')
                     ->searchable(),
                 TextColumn::make('created_at')

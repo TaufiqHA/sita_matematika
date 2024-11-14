@@ -32,7 +32,7 @@ class UserResource extends Resource
                     ->email()
                     ->required(),
                 Forms\Components\Select::make('roles')
-                    ->relationship('roles', 'name')
+                    ->relationship('roles', 'name', fn (Builder $query) => $query->where('name', '!=', 'mahasiswa'))
                     ->multiple()
                     ->preload()
                     ->searchable()
@@ -94,5 +94,14 @@ class UserResource extends Resource
             'create' => Pages\CreateUser::route('/create'),
             'edit' => Pages\EditUser::route('/{record}/edit'),
         ];
+    }
+
+    
+
+    public static function getEloquentQuery(): Builder
+    {
+        return parent::getEloquentQuery()->whereHas('roles', function($query){
+            $query->where('name', '!=', 'mahasiswa');
+        });
     }
 }

@@ -81,7 +81,7 @@ class MahasiswaResource extends Resource
     {
         return [
             'index' => Pages\CustomListMahasiswa::route('/'),
-            'create' => Pages\CreateMahasiswa::route('/create'),
+            'create' => Pages\CustomCreateMahasiswa::route('/create'),
             'edit' => Pages\EditMahasiswa::route('/{record}/edit'),
         ];
     }
