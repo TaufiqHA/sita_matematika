@@ -6,6 +6,7 @@ use App\Models\User;
 use Filament\Actions;
 use Filament\Forms\Form;
 use App\Models\Mahasiswa;
+use Spatie\Permission\Models\Role;
 use Filament\Forms\Components\Hidden;
 use Filament\Forms\Components\Select;
 use App\Filament\Resources\UserResource;
@@ -31,9 +32,6 @@ class CustomCreateMahasiswa extends createRecord
                     ->required(),
                 Select::make('roles')
                     ->relationship('roles', 'name', fn (Builder $query) => $query->where('name', 'mahasiswa'))
-                    ->multiple()
-                    ->preload()
-                    ->searchable()
                     ->required(),
                 TextInput::make('password')
                     ->password()
