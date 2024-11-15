@@ -98,7 +98,7 @@ class PengajuanJudulResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListPengajuanJuduls::route('/'),
+            'index' => Pages\CustomListPengajuanJudul::route('/'),
             // 'create' => Pages\CreatePengajuanJudul::route('/create'),
             // 'edit' => Pages\EditPengajuanJudul::route('/{record}/edit'),
         ];

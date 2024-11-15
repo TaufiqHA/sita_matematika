@@ -28,6 +28,7 @@ class KajurPanelProvider extends PanelProvider
             ->colors([
                 'primary' => Color::Amber,
             ])
+            ->brandName('Sita Matematika')
             ->login()
             ->discoverResources(in: app_path('Filament/Kajur/Resources'), for: 'App\\Filament\\Kajur\\Resources')
             ->discoverPages(in: app_path('Filament/Kajur/Pages'), for: 'App\\Filament\\Kajur\\Pages')

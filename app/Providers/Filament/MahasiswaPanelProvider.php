@@ -29,6 +29,7 @@ class MahasiswaPanelProvider extends PanelProvider
             ->colors(colors: [
                 'primary' => Color::Amber,
             ])
+            ->brandName('Sita Matematika')
             ->discoverResources(in: app_path('Filament/Mahasiswa/Resources'), for: 'App\\Filament\\Mahasiswa\\Resources')
             ->discoverPages(in: app_path('Filament/Mahasiswa/Pages'), for: 'App\\Filament\\Mahasiswa\\Pages')
             ->pages([

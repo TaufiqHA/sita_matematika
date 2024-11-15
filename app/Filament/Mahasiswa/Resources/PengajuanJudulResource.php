@@ -85,4 +85,11 @@ class PengajuanJudulResource extends Resource
             // 'edit' => Pages\EditPengajuanJudul::route('/{record}/edit'),
         ];
     }
+
+    public static function getEloquentQuery(): Builder
+    {
+        return parent::getEloquentQuery()->whereHas('user', function($query){
+            $query->where('id', Auth::user()->id);
+        });
+    }
 }
